@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.0
+    http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Text_Parser</name>
+ <channel>pear.sergiocarvalho.com</channel>
+ <summary>Driver class for LALR text parsers</summary>
+ <description>Text_Parser is an LALR(n) parser. The package basically contains an interpreter for a finite state automata, usable as a parser when given the relevant state information.
+
+Text_Parser is not meant to be directly used. The common usage is to have Text_Parser_Generator define a Text_Parser subclass for a given grammar. 
+
+In order for a Text_Parser subclass to be usable, it needs to define reduction functions, the parser action table and the parser goto table. All of these are pretty time-consuming tasks unless automated by a compiler-compiler such as Text_Parser_Generator.</description>
+ <lead>
+  <name>Sergio Carvalho</name>
+  <user>sergiosgc</user>
+  <email>sergiosgc@php.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-08-20</date>
+ <time>20:29:03</time>
+ <version>
+  <release>0.3.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>beta</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.php.net/license/3_01.txt">PHP License 3.01</license>
+ <notes>
+* Initial version
+ </notes>
+ <contents>
+  <dir baseinstalldir="Text/Parser" name="/">
+   <dir name="tests">
+    <file name="LALR_Wikipedia.phpt" role="test" />
+    <file name="LR_Wikipedia.phpt" role="test" />
+   </dir> <!-- /tests -->
+   <dir name="Text">
+    <dir name="Parser">
+     <dir name="LALR">
+      <file name="Test.php" role="php" />
+     </dir> <!-- /Text/Parser/LALR -->
+     <dir name="LR">
+      <file name="Test.php" role="php" />
+     </dir> <!-- /Text/Parser/LR -->
+     <file name="Exception.php" role="php" />
+     <file name="LALR.php" role="php" />
+     <file name="LR.php" role="php" />
+    </dir> <!-- /Text/Parser -->
+   </dir> <!-- /Text -->
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.5.4</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>0.3.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>alpha</api>
+   </stability>
+   <date>2010-08-20</date>
+   <license uri="http://www.php.net/license/3_01.txt">PHP License 3.01</license>
+   <notes>
+* Initial version
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.2.0</release>
+    <api>0.2.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2008-05-06</date>
+   <license uri="http://www.php.net/license/3_01.txt">PHP License 3.01</license>
+   <notes>
+* Initial version
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.1.0</release>
+    <api>0.1.0</api>
+   </version>
+   <stability>
+    <release>alpha</release>
+    <api>alpha</api>
+   </stability>
+   <date>2007-12-13</date>
+   <license uri="http://www.php.net/license/3_01.txt">PHP License 3.01</license>
+   <notes>
+* Initial version
+   </notes>
+  </release>
+ </changelog>
+</package>
