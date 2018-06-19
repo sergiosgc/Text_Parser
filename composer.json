@@ -1,0 +1,33 @@
+{
+    "name": "sergiosgc/Text_Parser",
+    "description": "Text_Parser is an LALR(n) parser. The package basically contains an interpreter for a finite state automata, usable as a parser when given the relevant state information. Text_Parser is not meant to be directly used. The common usage is to have Text_Parser_Generator define a Text_Parser subclass for a given grammar.",
+    "keywords": ["parser"],
+    "type": "library",
+    "license": "GPLv3",
+    "homepage": "https://github.com/sergiosgc/Text_Parser",
+    "repositories": [
+        {
+            "url": "https://github.com/sergiosgc/Text_Tokenizer.git",
+            "type": "git"
+        }
+    ],
+    "authors":
+    [
+        {
+            "name": "Sérgio Carvalho",
+            "homepage": "https://github.com/sergiosgc"
+        }
+    ],
+    "require":
+    {
+        "php": ">=7.0.0",
+        "sergiosgc/Text_Tokenizer": "dev-master"
+    },
+    "autoload":
+    {
+        "psr-0":
+        {
+            "sergiosgc\\": "lib/"
+        }
+    }
+}

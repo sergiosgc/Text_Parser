@@ -1,7 +1,7 @@
 <?php
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
-require_once('Text/Parser/LR.php');
-require_once('Text/Tokenizer/Token.php');
+namespace sergiosgc;
+
 /**
  * Text_Parser_Test is a simple parser for the grammar defined in 
  *  http://en.wikipedia.org/wiki/LR_parser

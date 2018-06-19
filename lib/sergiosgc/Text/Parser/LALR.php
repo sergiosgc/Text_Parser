@@ -1,7 +1,7 @@
 <?php
 /* vim: set expandtab tabstop=4 shiftwidth=4 foldmethod=marker: */
-require_once('Text/Parser/Exception.php');
-require_once('Text/Tokenizer/Token.php');
+namespace sergiosgc;
+
 /**
  * Text_Parser is the base class for parsers. In order to be useful, it must
  * be extended to include proper reduction functions for the grammar, as well as
