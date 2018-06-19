@@ -46,7 +46,7 @@ abstract class Text_Parser_LR
     {
         if (count($this->_stateStack) % 2 != 0) throw new Text_Parser_InvalidStateStackException('State stack is invalid (uneven count)');
         if (count($this->_stateStack) < (2 * $count)) 
-            throw new Text_Parser_EmptyStack_Exception(sprintf('Unable to pop %d tokens from a stack with %d tokens', $count, count($this->_stateStack) / 2));
+            throw new Text_Parser_EmptyStackException(sprintf('Unable to pop %d tokens from a stack with %d tokens', $count, count($this->_stateStack) / 2));
 
         $currentStateIndex = count($this->_stateStack) - 2 * $count - 2;
         $currentState = $currentStateIndex >= 0 ? $this->_stateStack[$currentStateIndex] : 0;
