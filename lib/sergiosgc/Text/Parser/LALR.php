@@ -195,7 +195,6 @@ abstract class Text_Parser_LALR
                     // Call the reduction function, retrieving the non-terminal that results from the reduction
                     $token = call_user_func_array(array($this, $action['function']), $symbols);
                     if (!is_object($token) || !method_exists($token, 'getId') || !method_exists($token, 'getValue')) {
-                        require_once('Text/Tokenizer/Token.php');
                         $token = new Text_Tokenizer_Token($action['leftNonTerminal'], $token);
                     }
                     // Using the reduction non-terminal and the parser state on the last retrieved token, lookup the goto table
@@ -211,8 +210,6 @@ abstract class Text_Parser_LALR
     /* Constructor {{{ */
     public function __construct(&$tokenizer)
     {
-        require_once('Text/Tokenizer/Lookahead.php');
-        require_once('Text/Tokenizer/Lookahead/Adapter.php');
         if (!$tokenizer instanceof Text_Tokenizer_Lookahead) $tokenizer = new Text_Tokenizer_Lookahead_Adapter($tokenizer);
         $this->_tokenizer = $tokenizer;
     }

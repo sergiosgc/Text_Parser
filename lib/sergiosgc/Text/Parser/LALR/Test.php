@@ -12,7 +12,6 @@ class Text_Parser_LALR_Test extends Text_Parser_LALR implements Text_Tokenizer
     /* Constructor {{{ */
     public function __construct()
     {
-        require_once('Text/Tokenizer/Token.php');
         parent::__construct($this);
         $this->_gotoTable = array(
          0 => array(

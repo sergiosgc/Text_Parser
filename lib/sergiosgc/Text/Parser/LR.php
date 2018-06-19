@@ -96,7 +96,6 @@ abstract class Text_Parser_LR
     {
         if (!is_array($this->_actionTable)) throw new Text_Parser_InvalidParserException('This parser has not been configured. It has no action table');
         if ($nextToken === false) {
-            require_once('Text/Tokenizer/Token.php');
             $nextToken = new Text_Tokenizer_Token('','');
         }
         if (!array_key_exists($state, $this->_actionTable) || !array_key_exists($nextToken->getId(), $this->_actionTable[$state])) throw new Text_Parser_UnexpectedTokenException($nextToken, $state);
@@ -154,7 +153,6 @@ abstract class Text_Parser_LR
                     }
                     $token = call_user_func_array(array($this, $action['function']), $symbols);
                     if (!is_object($token) || !method_exists($token, 'getId') || !method_exists($token, 'getValue')) {
-                        require_once('Text/Tokenizer/Token.php');
                         $token = new Text_Tokenizer_Token($action['leftNonTerminal'], $token);
                     }
                     $nextState = $this->getNextState($nextState, $token);
