@@ -1,5 +1,5 @@
 {
-    "name": "sergiosgc/Text_Parser",
+    "name": "sergiosgc/text_parser",
     "description": "Text_Parser is an LALR(n) parser. The package basically contains an interpreter for a finite state automata, usable as a parser when given the relevant state information. Text_Parser is not meant to be directly used. The common usage is to have Text_Parser_Generator define a Text_Parser subclass for a given grammar.",
     "keywords": ["parser"],
     "type": "library",
