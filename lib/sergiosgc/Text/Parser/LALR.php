@@ -173,17 +173,17 @@ abstract class Text_Parser_LALR
             switch ($action['action']) 
             {
                 case 'accept':
-                    $this->debugPrintf(1, "Accepting\n");
+                    $this->debugPrintf(1, "-Accepting\n");
                     return $this->getTopToken();
                     break;
                 case 'shift':
-                    $this->debugPrintf(1, "Shifting to state %d\n", $action['nextState']);
+                    $this->debugPrintf(1, "-Shifting to state %d\n", $action['nextState']);
                     $this->pushState($action['nextState'], $nextToken);
                     $nextToken = $this->_tokenizer->getNextToken();
-                    $this->debugPrintf(1, "Read token %s(%s) state %s\n", $nextToken ? $nextToken->getId() : '$', $nextToken ? $nextToken->getValue() : '$', $this->stateStackAsString());
+                    $this->debugPrintf(1, "\nRead token %s(%s) state %s\n", $nextToken ? $nextToken->getId() : '$', $nextToken ? $nextToken->getValue() : '$', $this->stateStackAsString());
                     break;
                 case 'reduce':
-                    $this->debugPrintf(1, "Reducing using %s state %s ", $action['function'], $this->stateStackAsString());
+                    $this->debugPrintf(1, "-Reducing using %s state %s ", $action['function'], $this->stateStackAsString());
                     $values = array();
                     // Retrieve tokens to be reduced, and the state the parser was at on the last retrieved token
                     $nextState = $this->popTokens($values, count($action['symbols']));

@@ -134,17 +134,17 @@ abstract class Text_Parser_LR
             switch ($action['action']) 
             {
                 case 'accept':
-                    if ($this->_debugLevel > 0) printf("Accepting\n");
+                    if ($this->_debugLevel > 0) printf("-Accepting\n");
                     return $this->getTopToken();
                     break;
                 case 'shift':
-                    if ($this->_debugLevel > 0) printf("Shifting to state %d\n", $action['nextState']);
+                    if ($this->_debugLevel > 0) printf("-Shifting to state %d\n", $action['nextState']);
                     $this->pushState($action['nextState'], $nextToken);
                     $nextToken = $this->_tokenizer->getNextToken();
-                    if ($this->_debugLevel > 0) printf("Read token %s(%s) state %s\n", $nextToken ? $nextToken->getId() : '$', $nextToken ? $nextToken->getValue() : '$', $this->stateStackAsString());
+                    if ($this->_debugLevel > 0) printf("\nRead token %s(%s) state %s\n", $nextToken ? $nextToken->getId() : '$', $nextToken ? $nextToken->getValue() : '$', $this->stateStackAsString());
                     break;
                 case 'reduce':
-                    if ($this->_debugLevel > 0) printf("Reducing using %s state %s\n", $action['function'], $this->stateStackAsString());
+                    if ($this->_debugLevel > 0) printf("-Reducing using %s state %s\n", $action['function'], $this->stateStackAsString());
                     $values = array();
                     $nextState = $this->popTokens($values, count($action['symbols']));
                     $symbols = array();
@@ -156,7 +156,7 @@ abstract class Text_Parser_LR
                         $token = new Text_Tokenizer_Token($action['leftNonTerminal'], $token);
                     }
                     $nextState = $this->getNextState($nextState, $token);
-                    if ($this->_debugLevel > 0) printf("Pushing state %d ", $nextState);
+                    if ($this->_debugLevel > 0) printf("-Pushing state %d ", $nextState);
                     $this->pushState($nextState, $token);
                     if ($this->_debugLevel > 0) printf("Result state %s\n", $this->stateStackAsString());
                     break;
